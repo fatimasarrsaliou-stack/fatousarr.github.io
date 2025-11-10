@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Étude de cas — File d'attente clinique</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <p><a href="../index.html">← Retour</a></p>
+    <h1>Gestion de file d’attente pour clinique (offline‑first)</h1>
+    <p class="section-note">PWA qui fonctionne sans connexion. Enregistrement patients, tickets, et affichage en salle.</p>
+
+    <h2>Contexte</h2>
+    <p>Les postes de santé ont des coupures de réseau fréquentes. Il faut une app fiable, simple et hors‑ligne.</p>
+
+    <h2>Rôle</h2>
+    <ul>
+      <li>Design UX minimal</li>
+      <li>Implémentation PWA + IndexedDB</li>
+    </ul>
+
+    <h2>Solution</h2>
+    <ul>
+      <li>Formulaires rapides, validation côté client</li>
+      <li>Synchro différée quand le réseau revient</li>
+      <li>Écran affichage “Maintenant / Suivant”</li>
+    </ul>
+
+    <h2>Impact</h2>
+    <ul>
+      <li><strong>-40%</strong> temps d’attente moyen mesuré sur 2 semaines pilote</li>
+      <li><strong>0</strong> perte de données pendant coupures</li>
+    </ul>
+
+    <h2>Liens</h2>
+    <p><a class="btn" href="#" aria-disabled="true">Démo</a> <a class="btn" href="#" aria-disabled="true">Code</a></p>
+  </div>
+</body></html>

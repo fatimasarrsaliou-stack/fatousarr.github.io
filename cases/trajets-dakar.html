@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Étude de cas — Comparateur de trajets Dakar</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <p><a href="../index.html">← Retour</a></p>
+    <h1>Comparateur de trajets à Dakar</h1>
+    <p class="section-note">Web app qui propose l’itinéraire le plus rapide/économique en combinant bus & taxis locaux.</p>
+
+    <h2>Contexte</h2>
+    <p>Les usagers hésitent entre plusieurs lignes et tarifs. Objectif: donner une recommandation claire et chiffrée.</p>
+
+    <h2>Rôle</h2>
+    <ul>
+      <li>Conception end‑to‑end (API + front)</li>
+      <li>Scraping/normalisation de données publiques</li>
+    </ul>
+
+    <h2>Solution</h2>
+    <ul>
+      <li><strong>Back‑end</strong>: Node/Express, endpoints /routes</li>
+      <li><strong>Front‑end</strong>: React + carte Leaflet</li>
+      <li><strong>Algorithme</strong>: Dijkstra pondéré (temps/prix/changement)</li>
+    </ul>
+
+    <h2>Impact</h2>
+    <ul>
+      <li><strong>-30%</strong> temps moyen de trajet sur 20 tests simulés</li>
+      <li><strong>~2s</strong> temps de réponse API sur 100 requêtes</li>
+    </ul>
+
+    <h2>Liens</h2>
+    <p><a class="btn" href="#" aria-disabled="true">Démo</a> <a class="btn" href="#" aria-disabled="true">Code</a></p>
+  </div>
+</body></html>

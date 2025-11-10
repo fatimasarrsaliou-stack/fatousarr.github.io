@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Étude de cas — OCR Factures</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <p><a href="../index.html">← Retour</a></p>
+    <h1>OCR de factures (photos smartphone)</h1>
+    <p class="section-note">Extraire automatiquement montant/consommation depuis des photos de factures pour un suivi mensuel.</p>
+
+    <h2>Contexte</h2>
+    <p>De petites entreprises saisissent à la main leurs factures. On automatise pour réduire les erreurs et gagner du temps.</p>
+
+    <h2>Rôle</h2>
+    <ul>
+      <li>Prototype Python de A à Z</li>
+      <li>Évaluation et métriques</li>
+    </ul>
+
+    <h2>Solution</h2>
+    <ul>
+      <li>Prétraitement (redressement, binarisation)</li>
+      <li>OCR Tesseract, regex pour champs clés</li>
+      <li>Export CSV + mini-dashboard Pandas</li>
+    </ul>
+
+    <h2>Impact</h2>
+    <ul>
+      <li><strong>-85%</strong> temps de saisie (de 20 min à 3 min / facture)</li>
+      <li><strong>98%</strong> champs correctement extraits sur 100 factures test</li>
+    </ul>
+
+    <h2>Liens</h2>
+    <p><a class="btn" href="#" aria-disabled="true">Démo</a> <a class="btn" href="#" aria-disabled="true">Code</a></p>
+  </div>
+</body></html>
