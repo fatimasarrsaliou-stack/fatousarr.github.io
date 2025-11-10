@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SARR Fatou</title>
+  <meta name="description" content="Étudiante en informatique de gestion — à la recherche d’un stage. Projets, parcours, compétences et contact.">
+  <meta property="og:title" content="Portfolio — SARR Fatou">
+  <meta property="og:description" content="Étudiante en informatique de gestion — à la recherche d’un stage.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/script.js"></script>
+  <link rel="icon" href="assets/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 span { background: linear-gradient(to right, #007cf0, #00dfd8); -webkit-background-clip: text; color: transparent; }
+    .btn.primary { background: linear-gradient(to right, #007cf0, #00dfd8); color: white; border: none; transition: 0.3s ease; }
+    .btn.primary:hover { opacity: 0.9; transform: scale(1.03); }
+    .card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+  </style>
+</head>
+<body>
+<header class="container">
+  <nav class="nav">
+    <a class="brand" href="/">SARR Fatou</a>
+    <button id="themeToggle" title="Changer de thème" aria-label="Changer de thème">☾</button>
+  </nav>
+  <section class="hero">
+    <div class="hero-text fade-in">
+      <h1><span>Etudiante</span> en Double licence 3º année Gestion-informatique [MIAGE]</h1>
+      <p class="lead">Je cherche un <strong>stage</strong> de fin d’études disponible dès avril, pour une durée de 3 à 6 mois.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projets">Voir mes projets</a>
+        <a class="btn" href="#contact">Me contacter</a>
+        <a class="btn ghost" href="Cv-stage.pdf" download>Télécharger mon CV</a>
+      </div>
+      <ul class="quick-facts">
+        <li>Basée à Paris, Ile de France</li>
+        <li>Stack: Python · JS · SQL · C · Java</li>
+        <li>Disponible dès Avril 2026</li>
+      </ul>
+    </div>
+    <img class="avatar fade-in" alt="Avatar" src="assets/avatar.svg" width="160" height="160">
+  </section>
+</header>
+
+<main>
+  <section id="projets" class="container">
+    <h2>Projets sélectionnés</h2>
+    <p class="section-note">Chaque carte mène à une <em>étude de cas</em> courte et actionnable.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Comparateur de trajets Dakar</h3>
+        <p>Une web app qui agrège horaires et tarifs des bus/taxis clandos pour recommander l’itinéraire le plus rapide et économique.</p>
+        <ul class="tags"><li>React</li><li>Node</li><li>Open Data</li></ul>
+        <div class="links">
+          <a class="btn small" href="cases/trajets-dakar.html">Étude de cas</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>OCR Factures Senelec</h3>
+        <p>Pipeline d’extraction automatique (OCR) pour lire montant/consommation depuis des photos de factures et générer des tableaux de suivi.</p>
+        <ul class="tags"><li>Python</li><li>Tesseract</li><li>Pandas</li></ul>
+        <div class="links">
+          <a class="btn small" href="cases/ocr-factures.html">Étude de cas</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>File d’attente clinique (offline-first)</h3>
+        <p>Appli PWA pour gérer l’enregistrement et la file d’attente d’un poste de santé, utilisable sans connexion.</p>
+        <ul class="tags"><li>PWA</li><li>IndexedDB</li><li>UX</li></ul>
+        <div class="links">
+          <a class="btn small" href="cases/clinique-queue.html">Étude de cas</a>
+        </div>
+      </article>
+    </div>
+  </section>
+<section class="container">
+  <h2>Compétences</h2>
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+
+    <div class="card">
+      <h3>🖥️ Informatique</h3>
+      <ul>
+        <li><strong>Langages :</strong> C, Python, Java, SQL, HTML, CSS, PHP</li>
+        <li><strong>Frameworks :</strong> Django, Odoo, WordPress</li>
+        <li><strong>Bases de données :</strong> MySQL, MCD/MLD, requêtes SQL complexes</li>
+        <li><strong>Outils :</strong> Git/GitHub, Excel, Word, PowerPoint</li>
+        <li><strong>Déploiement web :</strong> GitHub Pages</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📊 Gestion</h3>
+      <ul>
+        <li>Paramétrage de modules : factures, stocks, clients</li>
+        <li>Interprétation de bilans et comptes de résultat</li>
+        <li>Saisie et lettrage des écritures comptables</li>
+      <li>Gestion de projet technique avec Git</li>
+      </ul>
+    </div>
+
+
+    <div class="card">
+      <h3>💡 Soft Skills</h3>
+      <ul>
+        <li>✔️ Travail en équipe (présentiel et à distance)</li>
+        <li>✔️ Gestion du temps et respect des délais</li>
+        <li>✔️ Bonne communication (écrite et orale)</li>
+        <li>✔️ Rigueur et attention aux détails</li>
+        <li>✔️ Autonomie et curiosité technique</li>
+        <li>✔️ Capacité à comprendre un besoin métier</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+ <section class="container">
+  <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 32px; align-items: flex-start;">
+    <div class="card" style="height: 100%;">
+      <h2>🎓 Parcours académique</h2>
+      <div class="timeline">
+        <div class="item">
+          <time>2024–2026</time>
+          <div>
+            <strong>Double licence 2º, 3º année Gestion-informatique [MIAGE]</strong><br>
+            <span>Université Paris Nanterre</span>
+          </div>
+        </div>
+        <div class="item">
+          <time>2022–2023</time>
+          <div>
+            <strong>Licence 1º, 2º Développement web, mobile et multimédia</strong><br>
+            <span>Université Cheikh Anta Diop, Dakar, Sénégal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="height: 100%;">
+      <h2>💼 Expériences professionnelles</h2>
+      <div class="timeline">
+        <div class="item">
+          <time>Depuis sept. 2024</time>
+          <div>
+            <strong>Equipière polyvalente – McDonald’s, Bobigny</strong><br>
+            Encaissements, gestion des commandes, communication multilingue avec les clients.
+          </div>
+        </div>
+        <div class="item">
+          <time>Juil. – Août 2024</time>
+          <div>
+            <strong>Agent d’accueil et orientation – RATP (JO 2024), Paris</strong><br>
+            Accueil des voyageurs, orientation des visiteurs et assistance logistique en gare.
+          </div>
+        </div>
+        <div class="item">
+          <time>Févr. – Juin 2024</time>
+          <div>
+            <strong>Employée libre-service – Flunch, Mably</strong><br>
+            Réassort des buffets, gestion des stocks et réduction du gaspillage alimentaire.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="contact" class="container">
+  <h2>📬 Me contacter</h2>
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+    <div class="card">
+      <h3>📧 Email</h3>
+      <p><a href="mailto:fatimasaliousarr@gmail.com">fatimasaliousarr@gmail.com</a></p>
+    </div>
+    <div class="card">
+      <h3>🐙 GitHub</h3>
+      <p><a href="https://github.com/votre-github" target="_blank">github.com/votre-github</a></p>
+    </div>
+    <div class="card">
+      <h3>🔗 LinkedIn</h3>
+      <p><a href="https://www.linkedin.com/in/fatousarr-b5891126b" target="_blank">fatousarr-b5891126b</a></p>
+    </div>
+    <div class="card">
+      <h3>📱 Téléphone</h3>
+      <p><a href="tel:+33753263841">07 53 26 38 41</a></p>
+    </div>
+  </div>
+  <p style="margin-top: 20px;">📢 Disponible pour un stage (temps plein / partiel) – réponse sous 24h.</p>
+</section>
+
+</main>
+
+<footer class="container">
+  <p style="text-align: center; color: var(--muted);">
+    © 2025 — <strong>SARR Fatou</strong> · Portfolio développé avec ❤️ en HTML · CSS · JS
+  </p>
+</footer>
+
+</body>
+</html>
