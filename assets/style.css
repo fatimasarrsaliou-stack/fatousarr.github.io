@@ -73,13 +73,7 @@ footer p{color:var(--muted)}
   margin-top: 2rem;
 }
 
-.box {
-  background-color: #0f1223;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
+
 
 .box:hover {
   transform: translateY(-5px);
