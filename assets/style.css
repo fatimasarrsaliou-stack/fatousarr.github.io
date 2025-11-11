@@ -74,7 +74,7 @@ footer p{color:var(--muted)}
 }
 
 .box {
-  background-color: #fff;
+  background-color: #0f1223;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
