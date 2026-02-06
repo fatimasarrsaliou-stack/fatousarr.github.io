@@ -144,4 +144,69 @@ footer p{color:var(--muted)}
   transform:scale(1.08);
   box-shadow:0 0 40px rgba(255,92,255,1);
 }
+  /* ============================= */
+/* STACK TECHNOLOGIQUE SLIDER */
+/* ============================= */
+
+.stack-section{
+  margin-top:60px;
+  text-align:center;
+}
+
+.stack-title{
+  margin:25px 0;
+  color:var(--brand);
+}
+
+.slider{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+.slide-track{
+  display:flex;
+  width:calc(250px * 12);
+  animation:scroll 30s linear infinite;
+}
+
+@keyframes scroll{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(calc(-250px * 6)); }
+}
+
+.skill-card{
+  width:220px;
+  margin:0 15px;
+  background:var(--card);
+  border-radius:20px;
+  padding:25px 10px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transition:0.4s;
+}
+
+.skill-card i{
+  font-size:64px;
+  margin-bottom:10px;
+}
+
+.skill-card p{
+  margin:0;
+  font-weight:600;
+}
+
+.skill-card:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 30px var(--brand);
+}
+
+/* Pause au hover */
+.slider:hover .slide-track{
+  animation-play-state:paused;
+}
+
 
