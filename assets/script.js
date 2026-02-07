@@ -66,22 +66,28 @@ animateStars();
 /* CAROUSEL STACK ANIMATION */
 /* ============================= */
 
+/* ============================= */
+/* CAROUSEL STACK HORIZONTAL */
+/* ============================= */
+
 const track = document.querySelector(".carousel-track");
 
-let position = 0;
-let speed = 0.5;
+let x = 0;
+const speed = 0.6;
 
-function animateCarousel() {
-  position -= speed;
+function moveCarousel() {
+  x -= speed;
 
-  if (Math.abs(position) >= track.children[0].offsetWidth + 25) {
-    track.appendChild(track.children[0]);
-    position = 0;
+  const firstCard = track.children[0];
+  const cardWidth = firstCard.offsetWidth + 25;
+
+  if (Math.abs(x) >= cardWidth) {
+    track.appendChild(firstCard);
+    x = 0;
   }
 
-  track.style.transform = `translateX(${position}px)`;
-  requestAnimationFrame(animateCarousel);
+  track.style.transform = `translateX(${x}px)`;
+  requestAnimationFrame(moveCarousel);
 }
 
-animateCarousel();
-
+moveCarousel();
