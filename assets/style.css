@@ -287,3 +287,53 @@ footer p{color:var(--muted)}
 .tech-slider:hover .tech-track {
   animation-play-state: paused;
 }
+  /* ============================= */
+/* STACK TECHNOLOGIQUE CAROUSEL */
+/* ============================= */
+
+.stack-section {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.stack-title {
+  margin: 30px 0;
+  color: #ff4ffb;
+  font-weight: 700;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.tech-card {
+  min-width: 190px;
+  height: 220px;
+  background: linear-gradient(180deg, #2a0845, #12001f);
+  border-radius: 22px;
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  font-weight: 600;
+}
+
+.tech-card i {
+  font-size: 70px;
+}
+
+.tech-card p {
+  margin: 0;
+}
+
