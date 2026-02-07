@@ -61,3 +61,27 @@ function animateStars(){
 }
 
 animateStars();
+
+/* ============================= */
+/* CAROUSEL STACK ANIMATION */
+/* ============================= */
+
+const track = document.querySelector(".carousel-track");
+
+let position = 0;
+let speed = 0.5;
+
+function animateCarousel() {
+  position -= speed;
+
+  if (Math.abs(position) >= track.children[0].offsetWidth + 25) {
+    track.appendChild(track.children[0]);
+    position = 0;
+  }
+
+  track.style.transform = `translateX(${position}px)`;
+  requestAnimationFrame(animateCarousel);
+}
+
+animateCarousel();
+
