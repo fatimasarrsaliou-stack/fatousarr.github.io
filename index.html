@@ -25,6 +25,15 @@
       --radius: 14px;
     }
 
+    /* MODE CLAIR */
+    body.light-mode {
+      --bg: #eaf2fb;
+      --card: #ffffff;
+      --border: rgba(10,15,30,0.08);
+      --text: #10172b;
+      --muted: #4a5570;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,6 +42,8 @@
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
+      font-size: 17px;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     #stars {
@@ -40,6 +51,8 @@
       pointer-events: none;
       z-index: 0;
     }
+
+    body.light-mode #stars { display: none; }
 
     .container {
       max-width: 1100px;
@@ -60,7 +73,7 @@
 
     .brand {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       background: var(--grad);
       -webkit-background-clip: text;
       color: transparent;
@@ -72,10 +85,10 @@
       background: var(--card);
       border: 1px solid var(--border);
       color: var(--text);
-      width: 38px; height: 38px;
+      width: 40px; height: 40px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.1rem;
       transition: background 0.2s;
     }
     #themeToggle:hover { background: var(--accent1); }
@@ -92,7 +105,7 @@
 
     .eyebrow {
       display: inline-block;
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -104,7 +117,7 @@
     }
 
     h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(2.1rem, 4.5vw, 3.1rem);
       font-weight: 700;
       line-height: 1.25;
       margin-bottom: 16px;
@@ -118,9 +131,9 @@
 
     .lead {
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       margin-bottom: 28px;
-      max-width: 480px;
+      max-width: 500px;
     }
 
     .project-links-home {
@@ -136,7 +149,7 @@
       gap: 6px;
       padding: 10px 20px;
       border-radius: 8px;
-      font-size: 0.875rem;
+      font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
@@ -163,7 +176,7 @@
 
     .quick-facts li {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -186,7 +199,7 @@
     }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -195,7 +208,7 @@
     }
 
     h2 {
-      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
       font-weight: 700;
       margin-bottom: 32px;
       color: var(--text);
@@ -206,7 +219,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
     }
 
     .card:hover {
@@ -216,7 +229,7 @@
     }
 
     .card h3 {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 14px;
       color: var(--text);
@@ -225,7 +238,7 @@
     .card ul { list-style: none; }
     .card ul li {
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       padding: 5px 0;
       border-bottom: 1px solid var(--border);
     }
@@ -249,13 +262,14 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 32px;
+      transition: background 0.3s ease;
     }
 
-    .box h2 { font-size: 1.15rem; margin-bottom: 16px; }
+    .box h2 { font-size: 1.25rem; margin-bottom: 16px; }
     .box ul { list-style: none; }
     .box ul li {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 1rem;
       padding: 6px 0;
       display: flex;
       gap: 10px;
@@ -273,7 +287,7 @@
     .timeline-item:last-child { border-bottom: none; }
 
     .timeline-item time {
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--accent2);
       padding-top: 3px;
@@ -281,7 +295,7 @@
     }
 
     .timeline-item .ti-body strong {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--text);
       display: block;
       margin-bottom: 4px;
@@ -289,14 +303,14 @@
 
     .timeline-item .ti-body span,
     .timeline-item .ti-body p {
-      font-size: 0.82rem;
+      font-size: 0.92rem;
       color: var(--muted);
       line-height: 1.55;
     }
 
     .badge {
       display: inline-block;
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -314,19 +328,19 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
     }
     .project-card:hover {
       transform: translateY(-4px);
       border-color: rgba(0,124,240,0.35);
       box-shadow: 0 12px 40px rgba(0,124,240,0.12);
     }
-    .project-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; }
-    .project-card p { font-size: 0.87rem; color: var(--muted); margin-bottom: 16px; }
+    .project-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
+    .project-card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 16px; }
 
     .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
     .tech-tag {
-      font-size: 0.72rem;
+      font-size: 0.8rem;
       font-weight: 600;
       padding: 3px 10px;
       border-radius: 99px;
@@ -343,7 +357,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      transition: transform 0.25s, border-color 0.25s;
+      transition: transform 0.25s, border-color 0.25s, background 0.3s ease;
     }
     .contact-card:hover {
       transform: translateY(-3px);
@@ -359,8 +373,8 @@
       font-size: 1.2rem;
       flex-shrink: 0;
     }
-    .contact-card h3 { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-    .contact-card a { color: var(--text); font-size: 0.9rem; text-decoration: none; }
+    .contact-card h3 { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .contact-card a { color: var(--text); font-size: 1rem; text-decoration: none; }
     .contact-card a:hover { color: var(--accent2); }
 
     .avail-banner {
@@ -384,7 +398,7 @@
       0%,100% { box-shadow: 0 0 0 0 rgba(0,223,216,0.4); }
       50%      { box-shadow: 0 0 0 8px rgba(0,223,216,0); }
     }
-    .avail-banner p { font-size: 0.9rem; color: var(--muted); }
+    .avail-banner p { font-size: 1rem; color: var(--muted); }
     .avail-banner strong { color: var(--text); }
 
     .section-divider {
@@ -394,7 +408,7 @@
     }
 
     footer { padding: 40px 0; text-align: center; }
-    footer p { color: var(--muted); font-size: 0.85rem; }
+    footer p { color: var(--muted); font-size: 0.95rem; }
 
     .fade-in { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s forwards; }
     .fade-in:nth-child(2) { animation-delay: 0.15s; }
@@ -409,7 +423,7 @@
     .carousel-section h2 { margin-bottom: 8px; }
     .carousel-section .sub {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-bottom: 40px;
     }
     .carousel-wrapper {
@@ -451,7 +465,7 @@
       padding: 24px 20px;
       width: 120px;
       flex-shrink: 0;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.3s ease;
       cursor: default;
     }
     .tech-card:hover {
@@ -460,13 +474,13 @@
       box-shadow: 0 12px 30px rgba(0,124,240,0.2);
     }
     .tech-card img { width: 48px; height: 48px; object-fit: contain; }
-    .tech-card span { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+    .tech-card span { font-size: 0.9rem; font-weight: 600; color: var(--text); }
 
     @media(max-width:640px){
       .hero { flex-direction: column-reverse; align-items: flex-start; gap: 32px; }
       .avatar { width: 180px; height: 180px; }
       .timeline-item { grid-template-columns: 1fr; gap: 4px; }
-      .timeline-item time { font-size: 0.72rem; }
+      .timeline-item time { font-size: 0.8rem; }
       .carousel-wrapper::before,
       .carousel-wrapper::after { width: 60px; }
     }
@@ -523,12 +537,11 @@
           <li><span>✔️</span> Analyser et visualiser des données (Python, Excel, SQL)</li>
           <li><span>✔️</span> Personnaliser un module de gestion dans Odoo (facturation, stock…)</li>
           <li><span>✔️</span> Concevoir et gérer des projets en méthode Agile / Scrum</li>
-          <li><span>✔️</span> Gérer un dépôt GitHub et collaborer avec une équipe technique</li>
         </ul>
       </div>
       <div class="box">
         <h2>Mon objectif 🎯</h2>
-        <p style="color:var(--muted); font-size:0.92rem; line-height:1.8;">
+        <p style="color:var(--muted); font-size:1rem; line-height:1.8;">
           Appliquer mes compétences en développement web, analyse de données et outils de gestion pour participer à des projets concrets, contribuer à la transformation digitale des services et intégrer une équipe dynamique où je peux continuer à progresser techniquement et humainement.
         </p>
         <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:8px;">
@@ -553,9 +566,9 @@
         <ul>
           <li><strong>Langages :</strong> Python, Java, C, SQL, PL/SQL, HTML, CSS, PHP, JavaScript</li>
           <li><strong>Frameworks :</strong> Django, Node.js, Express, Odoo, WordPress</li>
-          <li><strong>Bases de données :</strong> MySQL, SQLite, MCD/MLD, requêtes SQL complexes</li>
+          <li><strong>Bases de données :</strong> MySQL, MCD/MLD, requêtes SQL complexes</li>
           <li><strong>Modélisation :</strong> UML, MERISE</li>
-          <li><strong>Outils :</strong> Git/GitHub, GitHub Pages, Excel, Word, PowerPoint</li>
+          <li><strong>Outils :</strong> Excel, Word, PowerPoint</li>
           <li><strong>Méthodes :</strong> Agile / Scrum</li>
         </ul>
       </div>
@@ -601,9 +614,6 @@
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="filter:brightness(0) invert(1);"><span>Django</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
-        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
-        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
-        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter:brightness(0) invert(1);"><span>GitHub</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" style="filter:brightness(0) invert(0.8);"><span>WordPress</span></div>
         <!-- Copie pour boucle infinie -->
@@ -616,9 +626,6 @@
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="filter:brightness(0) invert(1);"><span>Django</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
-        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
-        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
-        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter:brightness(0) invert(1);"><span>GitHub</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span></div>
         <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" style="filter:brightness(0) invert(0.8);"><span>WordPress</span></div>
       </div>
@@ -651,7 +658,6 @@
           <span class="tech-tag">Python</span>
           <span class="tech-tag">Django</span>
           <span class="tech-tag">HTML/CSS</span>
-          <span class="tech-tag">SQLite</span>
         </div>
         <a class="btn" href="https://portfolio-alternance-henna.vercel.app/#projects" target="_blank">Voir le portfolio →</a>
       </div>
@@ -801,9 +807,36 @@
   resize(); initStars(); drawStars();
   window.addEventListener('resize', () => { resize(); initStars(); drawStars(); });
 
-  document.getElementById('themeToggle').addEventListener('click', () => {
-    document.getElementById('themeToggle').textContent =
-      document.getElementById('themeToggle').textContent === '☾' ? '☀' : '☾';
+  /* ===== MODE CLAIR / SOMBRE ===== */
+  const themeToggle = document.getElementById('themeToggle');
+
+  function applyTheme(mode) {
+    if (mode === 'light') {
+      document.body.classList.add('light-mode');
+      themeToggle.textContent = '☀';
+    } else {
+      document.body.classList.remove('light-mode');
+      themeToggle.textContent = '☾';
+    }
+  }
+
+  let savedTheme = 'dark';
+  try {
+    savedTheme = localStorage.getItem('theme') || 'dark';
+  } catch (e) {
+    // localStorage indisponible -> on garde le mode sombre par défaut
+  }
+  applyTheme(savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.contains('light-mode');
+    const newTheme = isLight ? 'dark' : 'light';
+    applyTheme(newTheme);
+    try {
+      localStorage.setItem('theme', newTheme);
+    } catch (e) {
+      // si le stockage échoue, le thème reste actif pour la session en cours
+    }
   });
 </script>
 
