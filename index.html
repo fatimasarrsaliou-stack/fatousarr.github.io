@@ -1,7 +1,817 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <meta charset="utf-8"><!doctype html>
+<html lang="fr">
+<head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SARR Fatou — Master 1 MIAGE</title>
+  <meta name="description" content="Étudiante en Master 1 MIAGE - Ingénierie des Systèmes Intelligents — à la recherche d'une alternance. Projets, parcours, compétences et contact.">
+  <meta property="og:title" content="Portfolio — SARR Fatou">
+  <meta property="og:description" content="Étudiante en Master 1 MIAGE — Data Analyst · FullStack · AMOA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0f1e;
+      --card: #161f35;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8eaf6;
+      --muted: #8892b0;
+      --accent1: #007cf0;
+      --accent2: #00dfd8;
+      --grad: linear-gradient(135deg, var(--accent1), var(--accent2));
+      --radius: 14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    #stars {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section { padding: 80px 0; }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    #themeToggle {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    #themeToggle:hover { background: var(--accent1); }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      padding: 60px 0 80px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text { flex: 1; min-width: 280px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      border: 1px solid rgba(0,223,216,0.3);
+      border-radius: 99px;
+      padding: 4px 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+
+    .project-links-home {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn.primary {
+      background: var(--grad);
+      border: none;
+      color: white;
+    }
+    .btn.primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn:hover { border-color: var(--accent1); color: var(--accent1); transform: translateY(-2px); }
+
+    .quick-facts {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .quick-facts li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quick-facts li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent2);
+      flex-shrink: 0;
+    }
+
+    .avatar {
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 0 3px var(--accent1), 0 20px 60px rgba(0,124,240,0.25);
+      flex-shrink: 0;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,124,240,0.35);
+      box-shadow: 0 12px 40px rgba(0,124,240,0.12);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .card ul { list-style: none; }
+    .card ul li {
+      color: var(--muted);
+      font-size: 0.88rem;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .card ul li:last-child { border-bottom: none; }
+    .card ul li strong { color: var(--text); }
+
+    .grid-three {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .box h2 { font-size: 1.15rem; margin-bottom: 16px; }
+    .box ul { list-style: none; }
+    .box ul li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 6px 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .timeline { display: flex; flex-direction: column; }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-item time {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent2);
+      padding-top: 3px;
+      white-space: nowrap;
+    }
+
+    .timeline-item .ti-body strong {
+      font-size: 0.9rem;
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item .ti-body span,
+    .timeline-item .ti-body p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 99px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .badge-stage { background: rgba(0,223,216,0.15); color: var(--accent2); }
+    .badge-cdi   { background: rgba(0,124,240,0.15); color: var(--accent1); }
+    .badge-int   { background: rgba(139,92,246,0.15); color: #a78bfa; }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,124,240,0.35);
+      box-shadow: 0 12px 40px rgba(0,124,240,0.12);
+    }
+    .project-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; }
+    .project-card p { font-size: 0.87rem; color: var(--muted); margin-bottom: 16px; }
+
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .tech-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: rgba(0,124,240,0.12);
+      color: var(--accent1);
+      border: 1px solid rgba(0,124,240,0.2);
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,124,240,0.35);
+    }
+    .contact-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contact-card h3 { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .contact-card a { color: var(--text); font-size: 0.9rem; text-decoration: none; }
+    .contact-card a:hover { color: var(--accent2); }
+
+    .avail-banner {
+      background: linear-gradient(135deg, rgba(0,124,240,0.1), rgba(0,223,216,0.08));
+      border: 1px solid rgba(0,223,216,0.2);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .avail-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent2);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(0,223,216,0.4); }
+      50%      { box-shadow: 0 0 0 8px rgba(0,223,216,0); }
+    }
+    .avail-banner p { font-size: 0.9rem; color: var(--muted); }
+    .avail-banner strong { color: var(--text); }
+
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto;
+    }
+
+    footer { padding: 40px 0; text-align: center; }
+    footer p { color: var(--muted); font-size: 0.85rem; }
+
+    .fade-in { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s forwards; }
+    .fade-in:nth-child(2) { animation-delay: 0.15s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* CAROUSEL */
+    .carousel-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+    .carousel-section h2 { margin-bottom: 8px; }
+    .carousel-section .sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+    .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      padding: 10px 0 20px;
+    }
+    .carousel-wrapper::before,
+    .carousel-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 150px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .carousel-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .carousel-wrapper::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+    .carousel-wrapper:hover .carousel-track { animation-play-state: paused; }
+    .carousel-track {
+      display: flex;
+      gap: 20px;
+      animation: scrollLeft 30s linear infinite;
+      width: max-content;
+    }
+    @keyframes scrollLeft {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .tech-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      width: 120px;
+      flex-shrink: 0;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+    }
+    .tech-card:hover {
+      border-color: rgba(0,124,240,0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,124,240,0.2);
+    }
+    .tech-card img { width: 48px; height: 48px; object-fit: contain; }
+    .tech-card span { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+
+    @media(max-width:640px){
+      .hero { flex-direction: column-reverse; align-items: flex-start; gap: 32px; }
+      .avatar { width: 180px; height: 180px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      .timeline-item time { font-size: 0.72rem; }
+      .carousel-wrapper::before,
+      .carousel-wrapper::after { width: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<header class="container">
+  <nav class="nav">
+    <a class="brand" href="/">SARR Fatou</a>
+    <button id="themeToggle" title="Changer de thème" aria-label="Changer de thème">☾</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text fade-in">
+      <span class="eyebrow">Master 1 MIAGE · Paris Nanterre</span>
+      <h1><span>Étudiante</span> en Ingénierie des Systèmes Intelligents</h1>
+      <p class="lead">
+        Je recherche une <strong>alternance</strong> — Data Analyst · Data Engineer · AMOA · FullStack · Cheffe de projet.<br>
+        Disponible dès <strong>août 2026</strong>. Rythme : 2j formation / 3j entreprise ou 3 semaines / 3 semaines.
+      </p>
+      <div class="project-links-home">
+        <a class="btn primary" href="https://gestion-clients-gamma.vercel.app/" target="_blank">🗂️ App Gestion Clients</a>
+        <a class="btn primary" href="https://portfolio-alternance-henna.vercel.app/#projects" target="_blank">🌐 Portfolio Principal</a>
+        <a class="btn primary" href="https://fatimasarrsaliou-stack.github.io/Portfolio2/" target="_blank">🌐 Portfolio Secondaire</a>
+        <a class="btn" href="#contact">Me contacter</a>
+        <a class="btn" href="Cv_stage.pdf" target="_blank">Voir mon CV</a>
+      </div>
+      <ul class="quick-facts">
+        <li>Basée à Paris, Île-de-France</li>
+        <li>Stack : Python · Django · Node.js · SQL · HTML · CSS · JS · Java · C</li>
+        <li>Alternance disponible dès août 2026</li>
+        <li>Anglais B2 · Arabe B2 · Français natif</li>
+      </ul>
+    </div>
+    <img class="avatar fade-in" alt="Fatou Sarr" src="assets/Photo_1.jpg">
+  </section>
+</header>
+
+<div class="section-divider container"></div>
+
+<main>
+
+  <section class="container">
+    <div class="grid-two">
+      <div class="box">
+        <h2>Ce que je peux faire pour vous 💼</h2>
+        <ul>
+          <li><span>✔️</span> Créer un site web vitrine ou e-commerce avec HTML, CSS, PHP ou WordPress</li>
+          <li><span>✔️</span> Développer des applications web full-stack (Django, Node.js, Express)</li>
+          <li><span>✔️</span> Améliorer ou maintenir une base de données (SQL, MySQL)</li>
+          <li><span>✔️</span> Analyser et visualiser des données (Python, Excel, SQL)</li>
+          <li><span>✔️</span> Personnaliser un module de gestion dans Odoo (facturation, stock…)</li>
+          <li><span>✔️</span> Concevoir et gérer des projets en méthode Agile / Scrum</li>
+          <li><span>✔️</span> Gérer un dépôt GitHub et collaborer avec une équipe technique</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Mon objectif 🎯</h2>
+        <p style="color:var(--muted); font-size:0.92rem; line-height:1.8;">
+          Appliquer mes compétences en développement web, analyse de données et outils de gestion pour participer à des projets concrets, contribuer à la transformation digitale des services et intégrer une équipe dynamique où je peux continuer à progresser techniquement et humainement.
+        </p>
+        <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="tech-tag">Data Analyst</span>
+          <span class="tech-tag">Data Engineer</span>
+          <span class="tech-tag">AMOA</span>
+          <span class="tech-tag">FullStack Dev</span>
+          <span class="tech-tag">Cheffe de projet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider container"></div>
+
+  <section class="container">
+    <div class="section-label">Savoir-faire</div>
+    <h2>Compétences</h2>
+    <div class="grid-three">
+      <div class="card">
+        <h3>🖥️ Informatique</h3>
+        <ul>
+          <li><strong>Langages :</strong> Python, Java, C, SQL, PL/SQL, HTML, CSS, PHP, JavaScript</li>
+          <li><strong>Frameworks :</strong> Django, Node.js, Express, Odoo, WordPress</li>
+          <li><strong>Bases de données :</strong> MySQL, SQLite, MCD/MLD, requêtes SQL complexes</li>
+          <li><strong>Modélisation :</strong> UML, MERISE</li>
+          <li><strong>Outils :</strong> Git/GitHub, GitHub Pages, Excel, Word, PowerPoint</li>
+          <li><strong>Méthodes :</strong> Agile / Scrum</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📊 Gestion & Analyse</h3>
+        <ul>
+          <li>Analyse de données et statistiques</li>
+          <li>Transformation digitale et systèmes d'information</li>
+          <li>Analyse fonctionnelle et résolution de problèmes</li>
+          <li>Paramétrage de modules ERP : factures, stocks, clients</li>
+          <li>Interprétation de bilans et comptes de résultat</li>
+          <li>Saisie et lettrage des écritures comptables</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>💡 Soft Skills</h3>
+        <ul>
+          <li>Travail en équipe (présentiel et à distance)</li>
+          <li>Gestion de projet — méthode Agile / Scrum</li>
+          <li>Communication digitale et outils collaboratifs</li>
+          <li>Gestion du temps et respect des délais</li>
+          <li>Rigueur et attention aux détails</li>
+          <li>Autonomie et curiosité technique</li>
+          <li>Capacité à comprendre un besoin métier</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAROUSEL -->
+  <div class="carousel-section">
+    <div class="section-label" style="display:inline-block;">Stack Technologique</div>
+    <h2>Outils et technologies que j'utilise</h2>
+    <p class="sub">Passe la souris pour mettre en pause</p>
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><span>C</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span>HTML</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span>CSS</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="filter:brightness(0) invert(1);"><span>Django</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter:brightness(0) invert(1);"><span>GitHub</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" style="filter:brightness(0) invert(0.8);"><span>WordPress</span></div>
+        <!-- Copie pour boucle infinie -->
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><span>C</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span>HTML</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span>CSS</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" style="filter:brightness(0) invert(1);"><span>Django</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="filter:brightness(0) invert(1);"><span>GitHub</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><span>PHP</span></div>
+        <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" style="filter:brightness(0) invert(0.8);"><span>WordPress</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider container"></div>
+
+  <section class="container">
+    <div class="section-label">Réalisations</div>
+    <h2>Projets</h2>
+    <div class="grid-two">
+      <div class="project-card">
+        <h3>🗂️ Application Gestion de Clients</h3>
+        <p>Application web CRUD avec API REST permettant de gérer une liste de clients. Création, modification, suppression et affichage des données en temps réel.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Express</span>
+          <span class="tech-tag">SQL</span>
+        </div>
+        <a class="btn primary" href="https://gestion-clients-gamma.vercel.app/" target="_blank">Voir le projet →</a>
+      </div>
+      <div class="project-card">
+        <h3>🌐 Site Web Django</h3>
+        <p>Conception d'un site web dynamique avec système d'authentification utilisateurs, gestion de sessions et interface d'administration.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Django</span>
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">SQLite</span>
+        </div>
+        <a class="btn" href="https://portfolio-alternance-henna.vercel.app/#projects" target="_blank">Voir le portfolio →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider container"></div>
+
+  <section class="container">
+    <div class="section-label">Mon histoire</div>
+    <h2>Parcours</h2>
+    <div class="grid-two">
+      <div class="card">
+        <h3>🎓 Formation</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <time>2026 →</time>
+            <div class="ti-body">
+              <strong>Master 1 MIAGE — Ingénierie des Systèmes Intelligents</strong>
+              <span>Université Paris Nanterre</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>2024–2026</time>
+            <div class="ti-body">
+              <strong>Double licence 2e & 3e année — Gestion & Informatique [MIAGE]</strong>
+              <span>Université Paris Nanterre</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>2022–2023</time>
+            <div class="ti-body">
+              <strong>Licence 1 — Développement web, mobile et multimédia</strong>
+              <span>Université Cheikh Anta Diop, Dakar, Sénégal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>💼 Expériences professionnelles</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <time>Avr.–Juil. 2026</time>
+            <div class="ti-body">
+              <strong>Stagiaire — Consulat Général du Sénégal, Paris <span class="badge badge-stage">Stage</span></strong>
+              <p>Gestion administrative et optimisation du traitement des données au sein du service administratif du consulat.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>Sept. 2024 →</time>
+            <div class="ti-body">
+              <strong>Équipière polyvalente — McDonald's, Bobigny <span class="badge badge-cdi">CDI</span></strong>
+              <p>Gestion des encaissements, traitement des commandes, optimisation du temps de service et communication multilingue avec les clients.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>Juin–Août 2024</time>
+            <div class="ti-body">
+              <strong>Agente d'accueil — RATP (JO 2024), Paris <span class="badge badge-int">Intérim</span></strong>
+              <p>Conseil et vente de titres de transport, accueil des voyageurs et communication multilingue avec les touristes.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <time>Févr.–Juin 2024</time>
+            <div class="ti-body">
+              <strong>Employée libre-service — Flunch, Mably <span class="badge badge-cdi">CDI</span></strong>
+              <p>Gestion des stocks, opérations d'encaissement et réduction du gaspillage alimentaire.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider container"></div>
+
+  <section id="contact" class="container">
+    <div class="section-label">Restons en contact</div>
+    <h2>📬 Me contacter</h2>
+    <div class="grid-three" style="gap:16px;">
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div>
+          <h3>Email</h3>
+          <a href="mailto:fatimasaliousarr@gmail.com">fatimasaliousarr@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🔗</div>
+        <div>
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/fatou-sarr-b5891126b" target="_blank">Fatou SARR</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div>
+          <h3>Téléphone</h3>
+          <a href="tel:+33753263841">07 53 26 38 41</a>
+        </div>
+      </div>
+    </div>
+    <div class="avail-banner">
+      <div class="avail-dot"></div>
+      <p><strong>Disponible dès août 2026</strong> pour une alternance — réponse sous 24h garanti.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="container">
+  <p>© 2025–2026 — <strong>SARR Fatou</strong> · Portfolio développé avec ❤️ en HTML · CSS · JS</p>
+</footer>
+
+<script>
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < 180; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + 0.2,
+        o: Math.random() * 0.6 + 0.2
+      });
+    }
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${s.o})`;
+      ctx.fill();
+    });
+  }
+
+  resize(); initStars(); drawStars();
+  window.addEventListener('resize', () => { resize(); initStars(); drawStars(); });
+
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    document.getElementById('themeToggle').textContent =
+      document.getElementById('themeToggle').textContent === '☾' ? '☀' : '☾';
+  });
+</script>
+
+</body>
+</html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SARR Fatou — Master 1 MIAGE</title>
   <meta name="description" content="Étudiante en Master 1 MIAGE - Ingénierie des Systèmes Intelligents — à la recherche d'une alternance. Projets, parcours, compétences et contact.">
